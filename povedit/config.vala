@@ -48,7 +48,7 @@ namespace PovEdit {
 			config["core"]["show_right_margin"] = "false";
 			config["core"]["right_margin_position"] = "80";
 			config["core"]["font"] = "Monospace 12";
-			config["core"]["color_scheme"] = "Oblivion";
+			config["core"]["color_scheme"] = "Tango";
 			if(FileUtils.test(Environment.get_home_dir()+"/.poveditrc",FileTest.EXISTS)) {
 				parse_file(Environment.get_home_dir()+"/.poveditrc",config);
 			}

@@ -3,7 +3,7 @@
 obj = bld(
 	features  = 'cc cprogram',
 	packages  = 'gtk+-3.0 gtksourceview-3.0 gio-2.0 gee-1.0 config',
-	target    = 'vaedit',
+	target    = 'povedit',
 	vapi_dirs = 'vapi',
 	ccflags   = ['-include','config.h'],
 	uselib    = 'GTK GLIB GTKSOURCEVIEW GIO GEE',

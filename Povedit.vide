@@ -1,0 +1,30 @@
+--- !Project
+name: PovEdit
+author: 
+version: 
+license: None
+builder: Waf
+builder-options: !WafBuilderOptions
+  build-dir: 
+  prefix: 
+  configure-options: 
+  build-options: 
+  install-options: 
+  dist-options: 
+  clean-options: 
+  distclean-options: 
+  uninstall-options: 
+executable-options:
+  program: /home/mario/Desktop/DATEN/VALA/EDIT1/povedit/build/default/povedit/povedit
+  arguments: 
+  working-dir: /home/mario/Desktop/DATEN/VALA/EDIT1/Povedit/
+  environment: []
+files:
+- path: wscript
+- path: povedit/vapi/config.vapi
+- path: povedit/wscript_build
+- path: povedit/povedit.vala
+- path: povedit/config.vala
+- path: povedit/preferences.vala
+packages: []
+vapi_dir: []

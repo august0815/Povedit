@@ -1,0 +1,126 @@
+# VaEdit
+# Copyright (C) 2010 NieXS
+# This file is distributed under the same license as the VaEdit package.
+# NieXS <neo dot niexs at gmail dot com> 2010
+msgid ""
+msgstr ""
+"Project-Id-Version: PovEdit 0.1\n"
+"Report-Msgid-Bugs-To: NieXS\n"
+"POT-Creation-Date: 2010-06-02 02:25-0300\n"
+"PO-Revision-Date: 2010-06-02 02:28-0300\n"
+"Last-Translator:  <eduardo@localhost.localdomain>\n"
+"Language-Team: Brazilian Portuguese\n"
+"Language: pt_BR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: vaedit/vaedit.vala:36
+msgid "_File"
+msgstr "_Arquivo"
+
+#: vaedit/vaedit.vala:108
+msgid "Preferences"
+msgstr "Preferências"
+
+#: vaedit/vaedit.vala:109
+msgid "Auto-indent"
+msgstr "Recuar automaticamente"
+
+#: vaedit/vaedit.vala:119
+msgid "Insert tabs instead of spaces"
+msgstr "Inserir tabulações ao invés de espaços"
+
+#: vaedit/vaedit.vala:122
+msgid "Show line numbers"
+msgstr "Mostrar números de linha"
+
+#: vaedit/vaedit.vala:125
+msgid "Highlight current line"
+msgstr "Destacar linha atual"
+
+#: vaedit/vaedit.vala:128
+msgid "Highlight matching brackets"
+msgstr "Destacar colchetes correspondentes"
+
+#: vaedit/vaedit.vala:131
+msgid "Show right margin"
+msgstr "Mostrar margem da direita"
+
+#: vaedit/vaedit.vala:137
+msgid "Right margin column"
+msgstr "Coluna da margem da direita"
+
+#: vaedit/vaedit.vala:141
+msgid "Font:"
+msgstr "Fonte:"
+
+#: vaedit/vaedit.vala:146
+msgid "Color scheme:"
+msgstr "Esquema de cores:"
+
+#: vaedit/vaedit.vala:200
+msgid "_View"
+msgstr "_Ver"
+
+#: vaedit/vaedit.vala:206
+msgid "_Languages"
+msgstr "_Linguagens"
+
+#: vaedit/vaedit.vala:225
+msgid "_None"
+msgstr "_Nenhuma"
+
+#: vaedit/vaedit.vala:252
+msgid "_Previous file"
+msgstr "Arquivo _anterior"
+
+#: vaedit/vaedit.vala:258
+msgid "_Next file"
+msgstr "_Próximo arquivo"
+
+#: vaedit/vaedit.vala:264
+msgid "_Help"
+msgstr "A_juda"
+
+#: vaedit/vaedit.vala:270
+msgid "_Contents"
+msgstr "_Sumário"
+
+#: vaedit/vaedit.vala:345
+#, c-format
+msgid "File %d"
+msgstr "Arquivo %d"
+
+#: vaedit/vaedit.vala:368 vaedit/vaedit.vala:374
+msgid "untitled"
+msgstr "sem título"
+
+#: vaedit/vaedit.vala:389
+msgid "There was an error opening the file."
+msgstr "Houve um erro ao abrir o arquivo."
+
+#: vaedit/vaedit.vala:461
+msgid "Error saving file: access is denied."
+msgstr "Erro ao salvar o arquivo: acesso proibido."
+
+#: vaedit/vaedit.vala:470
+msgid "Some files have unsaved changes, quit anyway?"
+msgstr "Alguns arquivos possuem modificações não salvas, sair?"
+
+#: vaedit/vaedit.vala:516
+msgid "Select file"
+msgstr "Selecione um arquivo"
+
+#: vaedit/vaedit.vala:535 vaedit/vaedit.vala:566
+msgid "Choose a file name"
+msgstr "Escolha um nome de arquivo"
+
+#: vaedit/vaedit.vala:538 vaedit/vaedit.vala:569
+msgid "That file alreadly exists. Overwrite?"
+msgstr "Este arquivo já existe, continuar?"
+
+#: vaedit/vaedit.vala:594 vaedit/vaedit.vala:685
+msgid "The file has unsaved changes, close anyway?"
+msgstr "Este arquivo possui modificações não salvas, fechar?"

@@ -246,9 +246,9 @@ LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
 ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.""";
-				dialog.logo_icon_name = APPNAME;
-				dialog.program_name   = APPNAME;
-				dialog.version = VERSION;
+				dialog.logo = new Gdk.Pixbuf.from_file (Path.build_filename ("./povedit", "povedit.png"));
+				dialog.program_name   = "Vala POVRAY EDIT";
+				dialog.version = "0.0.1";
 				dialog.response.connect(() => {dialog.destroy();});
 				dialog.run();
 			});

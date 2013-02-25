@@ -1,0 +1,9 @@
+
+[Desktop Entry]
+Version=0.1pre
+Type=Application
+Name=Povedit
+Categories=GTK;Office;
+Exec=povedit
+Icon=povedit
+Terminal=false

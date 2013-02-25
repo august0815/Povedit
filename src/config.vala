@@ -1,3 +1,4 @@
+
 using Gee;
 namespace PovEdit {
 	public class ConfigManager : Object {
@@ -6,11 +7,7 @@ namespace PovEdit {
 		// INI-ish thing
 		public static HashMap<string,HashMap<string,string>> parse_file(string fname,HashMap<string,HashMap<string,string>>? existing_hash = null) {
 			string raw_file;
-			try {
-				FileUtils.get_contents(fname,out raw_file,null);
-			} catch(Error e) {
-				raw_file = "";
-			}
+			FileUtils.get_contents(fname,out raw_file,null);
 			string[] split_file = raw_file.split("\n");
 			string section = "core"; // A default so things don't choke
 			HashMap<string,HashMap<string,string>> result;
@@ -47,7 +44,7 @@ namespace PovEdit {
 			config["core"]["show_line_numbers"] = "true";
 			config["core"]["show_right_margin"] = "false";
 			config["core"]["right_margin_position"] = "80";
-			config["core"]["font"] = "Monospace 12";
+			config["core"]["font"] = "Times New Roman, 14";
 			config["core"]["color_scheme"] = "Tango";
 			if(FileUtils.test(Environment.get_home_dir()+"/.poveditrc",FileTest.EXISTS)) {
 				parse_file(Environment.get_home_dir()+"/.poveditrc",config);
@@ -59,8 +56,9 @@ namespace PovEdit {
 				}
 			}
 		}
-		
-		public void save_data() {
+	
+
+	public void save_data() {
 			string output = "";
 			foreach(string section in config.keys) {
 				output += "["+section+"]\n";
@@ -69,7 +67,7 @@ namespace PovEdit {
 				}
 			}
 			try {
-				FileUtils.set_contents(Environment.get_home_dir()+"/.poveditrc",output);
+				FileUtils.set_contents(Environment.get_home_dir()+"/.vaeditrc",output);
 			} catch(Error e) {
 				
 			}

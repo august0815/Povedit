@@ -1,8 +1,10 @@
+
 using Gtk;
 using Gee;
 namespace  PovEdit {
-public class PreferencesDialog : Dialog {
- private CheckButton auto_indent;
+public class PreferencesDialog : Dialog {         
+   // private Entry search_entry ;
+    private CheckButton auto_indent;
     private SpinButton indentation_width;
     private Widget find_button;
     private HBox idwidth_hbox;
@@ -18,13 +20,21 @@ public class PreferencesDialog : Dialog {
 		private Label scheme_label;
 		private ComboBoxText scheme_box;
 		private SList<string> names_list = new SList<string>();
-		
-  public PreferencesDialog () {
-  			this.title = "Preferences";
+  
+    public PreferencesDialog () {
+        this.title = "Preferences";
         this.border_width = 5;
         set_default_size (300, 800);
-        
-				this.auto_indent = new CheckButton.with_mnemonic ("_Auto-indent");
+        //string test= gui.config["core"]["font"]+"\n";
+        //print (test);
+        create_widgets ();
+        connect_signals ();
+    }
+
+    private void create_widgets () {
+
+        // Create and setup widgets
+        this.auto_indent = new CheckButton.with_mnemonic ("_Auto-indent");
         
         this.idwidth_hbox = new HBox(false,0);
        	this.indentation_width = new SpinButton.with_range(0,100,1);
@@ -80,31 +90,54 @@ public class PreferencesDialog : Dialog {
         add_button (Stock.CANCEL, ResponseType.CANCEL);
         this.find_button = add_button (Stock.APPLY, ResponseType.APPLY);
         this.find_button.sensitive = true;
+
+        show_all ();
         
-				show_all();
-				
-				// Feeding data
-				auto_indent.active                 = gui.config["core"]["auto_indent"] == "true";
-				indentation_width.value            = gui.config["core"]["indent_width"].to_int();
-				tabs_over_spaces.active            = gui.config["core"]["indent_with_tabs"] == "true";
-				show_line_numbers.active           = gui.config["core"]["show_line_numbers"] == "true";
-				highlight_current_line.active      = gui.config["core"]["highlight_current_line"] == "true";
-				highlight_matching_brackets.active = gui.config["core"]["highlight_matching_brackets"] == "true";
-				show_right_margin.active           = gui.config["core"]["show_right_margin"] == "true";
-				right_margin_column.value          = gui.config["core"]["right_margin_position"].to_int();
-				int i = 0;
+      	auto_indent.active                 = true;
+				indentation_width.value            = 4;
+				tabs_over_spaces.active            = true;
+				show_line_numbers.active           = true;
+				highlight_current_line.active      = true;
+				highlight_matching_brackets.active = true;
+				show_right_margin.active           = true;
+				right_margin_column.value          = 80;
+			/*	int i = 0;
 				foreach(string name in names_list) {
 					if(name == gui.config["core"]["color_scheme"]) {
 						scheme_box.active = i;
 						break;
 					}
 					i++;
-				}
+				}*/
 				
-				this.response.connect((id) => {
-					this.destroy();
-					if(id == Gtk.ResponseType.APPLY) {
-						gui.config["core"]["auto_indent"]       = auto_indent.active ? "true" : "false";
+				//print (gui.config["core"]["indent_width"]);
+    }
+    
+
+    private void connect_signals () {
+       // this.search_entry.changed.connect (() => {
+       //     this.find_button.sensitive = (this.search_entry.text != "");
+       // });
+        this.response.connect (on_response);
+    }
+
+    private void on_response (Dialog source, int response_id) {
+        switch (response_id) {
+       //case ResponseType.HELP:
+            // show_help ();
+       //     break;
+        case ResponseType.APPLY:
+            on_find_clicked ();
+            destroy();
+            break;
+        case ResponseType.CANCEL:
+            destroy ();
+            break;
+        }
+    }
+        private void on_find_clicked () {
+   
+					/*	gui.config["core"]["auto_indent"]       = auto_indent.active ? "true" : "false";
 						gui.config["core"]["indent_width"]      = indentation_width.value.to_string();
 						gui.config["core"]["indent_with_tabs"]  = tabs_over_spaces.active ? "true" : "false";
 						gui.config["core"]["show_line_numbers"] = show_line_numbers.active ? "true" : "false";
@@ -112,16 +145,11 @@ public class PreferencesDialog : Dialog {
 						gui.config["core"]["highlight_matching_brackets"] = highlight_matching_brackets.active ? "true" : "false";
 						gui.config["core"]["show_right_margin"] = show_right_margin.active ? "true" : "false";
 						gui.config["core"]["font"] = font.font_name;
-						gui.config["core"]["color_scheme"] = names_list.nth_data(scheme_box.active);
-						gui.config_manager.save_data();
-						gui.apply_settings();
-					} else {
-						return;
-					}
+						gui.config["core"]["color_scheme"] = names_list.nth_data(scheme_box.active);*/
+						//gui.config_manager.save_data();
+						//gui.apply_settings();
 					
-				});
-				run();
-			}
-		}
-	}
-			
+    }
+    
+ }
+}  
